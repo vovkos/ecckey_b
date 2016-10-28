@@ -1,0 +1,6 @@
+[submodule "axl"]
+	path = axl
+	url = git@git.tibbo.net:axl
+[submodule "ecckey"]
+	path = ecckey
+	url = git@git.tibbo.net:ecckey
