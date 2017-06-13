@@ -9,8 +9,8 @@
 ..
 .. .............................................................................
 
-ECCKey
-======
+ECCKey (bundle repo)
+====================
 .. image:: https://travis-ci.org/vovkos/ecckey_b.svg?branch=master
 	:target: https://travis-ci.org/vovkos/ecckey_b
 .. image:: https://ci.appveyor.com/api/projects/status/u32id4xdvblk01wa?svg=true
@@ -19,4 +19,21 @@ ECCKey
 Abstract
 --------
 
-ECCKey is a command line utility for generating ECC-based product keys (ECC stands for **elliptic curve cryptography**). Here in Tibbo we use ECCKey to generate product keys for `IO Ninja <http://tibbo.com/ninja>`_. You can use ECCKey as a ready-to-use generator of product keys for shareware products of all kinds.
+``ecckey_b`` is a helper *bundle repository* for the **ECCKey** project. It contains both `ecckey <https://github.com/vovkos/ecckey>`_ and `axl <https://github.com/vovkos/axl>`_ as *git submodules* and provides a straightforward build sequence:
+
+.. code-block:: bash
+
+	# clone bundle repo
+
+	git clone https://github.com/vovkos/ecckey_b
+	cd ecckey_b
+	git submodule update --init
+
+	# build
+
+	mkdir build
+	cd build
+	cmake ..
+	cmake --build .
+
+``ecckey_b`` is automatically updated each time a new commit to the ``master`` branch of `ecckey <https://github.com/vovkos/ecckey>`_ successfully passes build and test stages on both `Travis CI <https://travis-ci.org/vovkos/ecckey>`_ and `AppVeyor CI <https://ci.appveyor.com/project/vovkos/ecckey>`_.
