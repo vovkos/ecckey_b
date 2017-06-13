@@ -1,0 +1,49 @@
+#...............................................................................
+#
+#  This file is part of the ECCKey utility.
+#
+#  ECCKey is distributed under the MIT license.
+#  For details see accompanying license.txt file,
+#  the public copy of which is also available at:
+#  http://tibbo.com/downloads/archive/ecckey/license.txt
+#
+#...............................................................................
+
+branches:
+    only:
+        - master
+
+image: Visual Studio 2015
+
+init:
+    - git config --global core.autocrlf input
+
+clone_folder: c:\projects\ecckey
+shallow_clone: true
+
+matrix:
+    fast_finish: false
+
+platform:
+    - x64
+    - x86
+
+configuration:
+    - Debug
+    - Release
+
+environment:
+    matrix:
+        - TOOLCHAIN: msvc10
+        - TOOLCHAIN: msvc12
+        - TOOLCHAIN: msvc14
+
+install:
+    - call ecckey\ci\appveyor\set-env.bat %TOOLCHAIN% %PLATFORM%
+    - call ecckey\ci\appveyor\install.bat
+
+build_script:
+    - mkdir build
+    - cd build
+    - cmake .. %CMAKE_CONFIGURE_FLAGS%
+    - cmake --build . %CMAKE_BUILD_FLAGS%
