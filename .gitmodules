@@ -1,8 +1,8 @@
 [submodule "axl"]
 	path = axl
-	url = http://github.com/vovkos/axl
+	url = https://github.com/vovkos/axl
 	pushurl = git@github.com:vovkos/axl.git
 [submodule "ecckey"]
 	path = ecckey
-	url = http://github.com/vovkos/ecckey
+	url = https://github.com/vovkos/ecckey
 	pushurl = git@github.com:vovkos/ecckey.git
