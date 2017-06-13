@@ -19,7 +19,7 @@ init:
     - git config --global core.autocrlf input
 
 clone_folder: c:\projects\ecckey
-shallow_clone: true
+clone_depth:  1
 
 matrix:
     fast_finish: false
@@ -39,6 +39,7 @@ environment:
         - TOOLCHAIN: msvc14
 
 install:
+    - git submodule update --init
     - call ecckey\ci\appveyor\set-env.bat %TOOLCHAIN% %PLATFORM%
     - call ecckey\ci\appveyor\install.bat
 
