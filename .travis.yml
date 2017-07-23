@@ -39,7 +39,8 @@ matrix:
           env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 install:
-    - source ecckey/ci/travis/install-$TRAVIS_OS_NAME.sh
+    - source ecckey/ci/travis/set-env.sh
+    - bash ecckey/ci/travis/install-$TRAVIS_OS_NAME.sh
 
 script:
     - mkdir build
