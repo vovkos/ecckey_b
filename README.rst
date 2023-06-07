@@ -11,10 +11,8 @@
 
 ECCKey (bundle repo)
 ====================
-.. image:: https://travis-ci.org/vovkos/ecckey_b.svg?branch=master
-	:target: https://travis-ci.org/vovkos/ecckey_b
-.. image:: https://ci.appveyor.com/api/projects/status/u32id4xdvblk01wa?svg=true
-	:target: https://ci.appveyor.com/project/vovkos/ecckey-b
+.. image:: https://github.com/vovkos/ecckey_b/actions/workflows/ci.yml/badge.svg
+	:target: https://github.com/vovkos/ecckey_b/actions/workflows/ci.yml
 
 Abstract
 --------
@@ -36,4 +34,4 @@ Abstract
 	cmake ..
 	cmake --build .
 
-``ecckey_b`` is automatically updated each time a new commit to the ``master`` branch of `ECCKey <https://github.com/vovkos/ecckey>`_ successfully passes build and test stages on both `Travis CI <https://travis-ci.org/vovkos/ecckey>`_ and `AppVeyor CI <https://ci.appveyor.com/project/vovkos/ecckey>`_.
+``ecckey_b`` is automatically updated each time a new commit to the ``master`` branch of `ECCKey <https://github.com/vovkos/ecckey>`_ successfully passes build and test stages on `GitHub Actions <https://github.com/vovkos/ecckey/actions>`_.
