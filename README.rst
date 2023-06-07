@@ -34,4 +34,4 @@ Abstract
 	cmake ..
 	cmake --build .
 
-``ecckey_b`` is automatically updated each time a new commit to the ``master`` branch of `ECCKey <https://github.com/vovkos/ecckey>`_ successfully passes build and test stages on `GitHub Actions <https://github.com/vovkos/ecckey/actions>`_.
+``ecckey_b`` is automatically updated each time a new commit to the ``master`` branch of `ECCKey <https://github.com/vovkos/ecckey>`_ successfully passes build and test stages on `GitHub Actions <https://github.com/vovkos/ecckey/actions/workflows/ci.yml>`_.
