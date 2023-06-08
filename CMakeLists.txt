@@ -15,6 +15,7 @@ project (ecckey_b)
 
 include (axl/cmake/axl_cmake.cmake NO_POLICY_SCOPE)
 
+set(BUILD_AXL_TESTS OFF CACHE BOOL "AXL tests disabled" FORCE)
 add_subdirectory (axl EXCLUDE_FROM_ALL)
 include (axl/cmake/import_axl.cmake)
 
