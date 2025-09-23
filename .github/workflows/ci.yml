@@ -7,7 +7,7 @@ on:
 jobs:
     windowsBuild:
         name: Windows Build
-        runs-on: windows-2019
+        runs-on: windows-2022
         strategy:
             fail-fast: false
             matrix:
@@ -29,7 +29,7 @@ jobs:
             shell: cmd
             run: |
                 set CONFIGURATION=${{matrix.CONFIGURATION}}
-                call ecckey\ci\github-actions\set-env.bat msvc16 ${{matrix.TARGET_CPU}}
+                call ecckey\ci\github-actions\set-env.bat ${{matrix.TARGET_CPU}}
                 call ecckey\ci\github-actions\install-windows.bat
 
         -   name: Build and test
@@ -39,7 +39,7 @@ jobs:
                 set THIS_DIR=%CD%
                 set THIS_DIR_CMAKE=%THIS_DIR:\=/%
 
-                call ecckey\ci\github-actions\set-env.bat msvc16 ${{matrix.TARGET_CPU}}
+                call ecckey\ci\github-actions\set-env.bat ${{matrix.TARGET_CPU}}
 
                 mkdir build
                 cd build
@@ -49,7 +49,7 @@ jobs:
 
     linuxBuild:
         name: Linux Build
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-24.04
         strategy:
             fail-fast: false
             matrix:
@@ -92,7 +92,7 @@ jobs:
 
     macOsBuild:
         name: macOS Build
-        runs-on: macos-11
+        runs-on: macos-13
         strategy:
             fail-fast: false
             matrix:
